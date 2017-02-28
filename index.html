@@ -239,6 +239,111 @@
             
               
                 
+                <a class="post-title-link" href="/2017/mysql-update-if-case.html" itemprop="url">
+                  mysql update if/case
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-28T11:38:14+08:00" content="2017-02-28">
+              2017-02-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>MySQL update可以使用 IF / CASE 更新</p>
+<p>不解释，直接看SQL</p>
+<pre><code class="sql"># 常规用法
+UPDATE goods SET goods_num = 5 WHERE goods_id = 1
+UPDATE goods SET goods_num = goods_num - 5 WHERE goods_id = 1
+</code></pre>
+<pre><code class="sql"># 防止 goods_num 减成负数
+UPDATE goods SET goods_num = IF(goods_num &gt; 5, goods_num - 5, 0) WHERE goods_id = 1
+</code></pre>
+<pre><code class="sql"># 防止 goods_num 减成负数 CASE 用法
+UPDATE goods SET goods_num = CASE WHEN goods_num &gt; 5 THEN  goods_num - 5 ELSE 0 END WHERE goods_id = 1
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/ORID-20170210.html" itemprop="url">
                   ORID20170210记录
                 </a>
@@ -1012,7 +1117,7 @@ http://php.net/manual/zh/datetime.formats.relative.php
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1029,7 +1134,7 @@ http://php.net/manual/zh/datetime.formats.relative.php
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
